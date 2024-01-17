@@ -10,6 +10,10 @@ Square one, al principio, we begin by creating a React.js project with [Vite](ht
 
 Phew, that was easy. Now we can go ahead and open our project inside of your code editor!
 
+Then we'll quickly need to install firebase as an NPM dependancy for our project by running the following command in our terminal:
+
+`npm i firebase`
+
 The next task on our list is to create the following files:
 
 1. `/firebase.js`
