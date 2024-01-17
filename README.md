@@ -140,7 +140,7 @@ export default function Login() {
     const [createAccount, setCreateAccount] = useState(false)
     const [userCreds, setUserCreds] = useState({ email: '', password: '' })
 
-    const { signUp, login } = useAuth()
+    const { signup, login } = useAuth()
 
     function updateEmail(e) {
         setUserCreds({ ...userCreds, email: e.target.value })
@@ -158,7 +158,7 @@ export default function Login() {
         if (createAccount) {
             // recommended to add password regex check in here
             console.log('Registering')
-            signUp(userCreds.email, userCreds.password)
+            signup(userCreds.email, userCreds.password)
         } else {
             console.log('Logging in')
             login(userCreds.email, userCreds.password)
