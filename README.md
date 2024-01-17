@@ -221,7 +221,7 @@ You can read more about CRUD operations with Firebase/Firestore here:
 * https://firebase.google.com/docs/firestore/manage-data/add-data
 
 
-### Chapter 2 — Modifying App.jsx
+### Chapter 2 — Modifying App.jsx & Main.jsx
 
 With all our components and files created, we can quickly make a modification to our `app.jsx` component so that it renders the login component for unauthenticated users, and the dashboard for those logged in already.
 
@@ -247,6 +247,24 @@ export default App
 ```
 
 This very simple app component accesses the currentUser state using the auth context and conditionally renders either our dashboard or login component depending on whether or not a user is found!
+
+Our `main.jsx` receives a very simple update, simply wrapping the app in the new context:
+
+```
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>,
+)
+
+```
 
 ## Chapter 3 — Initializing Firebase
 
